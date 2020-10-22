@@ -1,0 +1,53 @@
+/* .mainPageContainer {
+  display: flex;
+}
+.App {
+  background-color: antiquewhite;
+  height:100vh;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100vh;
+  background-color: #06908F;
+} */
+
+/* .main-button-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: antiquewhite;
+  padding: 25%;
+} */
+
+/* .navbar-toggler {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-collapse {
+  display: flex;
+  flex-direction: row;
+} */
+
+/* .core-parts-container {
+  height: auto;
+  width: auto;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.meditate-button {
+  display: flex;
+  width: max-content;
+  height: max-content;
+}
+
+.secondary-buttons-container {
+  justify-content: center;
+} */
