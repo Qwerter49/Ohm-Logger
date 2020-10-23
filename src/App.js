@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         <Switch>
         <Route path="/login" render={(props) => <Login {...props} />} />
-        <PrivateRoute exact path="/"/>
+        <PrivateRoute path="/"/>
         </Switch>
       </div>
     </Router>

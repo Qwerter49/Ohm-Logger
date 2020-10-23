@@ -13,7 +13,12 @@ export default function Login(props) {
     const handleSubmit = (event) => {
         let history = props.history
         event.preventDefault()
+        // console.log(event.target)
         login({username, password, history})
+    }
+
+    const handleCreateUser = (event) => {
+        console.log(event.target)
     }
 
 
@@ -36,11 +41,11 @@ export default function Login(props) {
     }
 
     return (
-        <CardDeck className="login-card-container justify-content-sm-center row h-100 p-sm-5">
-                <Card className=" m-lg-auto my-auto" >
+        <CardDeck className="login-card-container justify-content-sm-center row h-100 p-5">
+                <Card className=" mx-5 my-auto" >
                 <Card.Title className="text-center mt-2">Meditation App!</Card.Title>
                 <Card.Subtitle className="text-center">Please Log In</Card.Subtitle>
-                    <Form className="login-form ml-4 mr-4" onSubmit={handleSubmit}>
+                    <Form className="login-form mx-4" onSubmit={handleSubmit}>
                         <Form.Group controlId="formBasicUsername">
                             <Form.Label>Username: </Form.Label>
                             <Form.Control type="username" value={username} onChange={(event) => setUsername(event.target.value)} placeholder="Input Username"/>
@@ -51,11 +56,10 @@ export default function Login(props) {
                             </Form.Group>
                             <Form.Row className="justify-content-sm-between mb-2">
                                 <Button variant="primary" type="submit">Login</Button>
-                                <Button variant="secondary"type="submit">Create Account</Button>
+                                <Button onClick={handleCreateUser} variant="secondary"type="submit">Create Account</Button>
                             </Form.Row>
                     </Form>
                 </Card>
-                {/* <button onClick={handleCreateUser}>Create Account</button> */}
         </CardDeck>
     )
 }
