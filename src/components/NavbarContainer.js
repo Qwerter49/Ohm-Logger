@@ -59,7 +59,7 @@ export default function NavbarContainer(props) {
                 <Nav.Link className="my-5" href="profile"><i className="fas fa-user fa-3x"></i></Nav.Link>
               </OverlayTrigger>
               <OverlayTrigger placement="right" delay={{ show: 250, hide: 400 }} overlay={renderCalandarTooltip}>
-                <Nav.Link className="my-5" href="calandar"><i className="far fa-calendar-alt fa-3x"></i></Nav.Link>
+                <Nav.Link className="my-5" href="calendar"><i className="far fa-calendar-alt fa-3x"></i></Nav.Link>
               </OverlayTrigger>
               <OverlayTrigger placement="right" delay={{ show: 250, hide: 400 }} overlay={renderLogoutTooltip}>
                 <Nav.Link className="my-5" onClick={handleLogoutClick}><i className="fas fa-sign-out-alt fa-3x"></i></Nav.Link>
