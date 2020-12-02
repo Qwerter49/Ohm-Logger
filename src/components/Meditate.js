@@ -3,15 +3,10 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import meditationImage from '../images/meditation-svg-2.png'
 
-export default function Meditate() {
-    let displayedTime
+export default function Meditate(props) {
 
     const [seconds, setSeconds] = useState(0)
     const [isActive, setIsActive] = useState(false)
-
-    const toggleClicked = () => {
-        setIsActive(!isActive)
-    }
 
     useEffect(() => {
         let interval
@@ -25,8 +20,8 @@ export default function Meditate() {
         return () => clearInterval(interval)
     }, [isActive, seconds])
 
-    const handleMeditateClick = (event) => {
-        toggleClicked()
+    const handleMeditateClick = () => {
+        setIsActive(!isActive)
     }
 
     const reset = () => {
@@ -36,7 +31,7 @@ export default function Meditate() {
     
     const submitTime = () => {
         let userToken = localStorage.token
-        fetch('http://localhost:4000/sessions', {
+        fetch('http://localhost:4000/users-sessions', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

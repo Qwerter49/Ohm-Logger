@@ -2,3 +2,14 @@
   background-color: antiquewhite;
   height: 100vh;
 }
+
+.show a {
+  margin-left: -55px;
+}
+
+.profile-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

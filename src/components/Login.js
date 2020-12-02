@@ -8,22 +8,25 @@ export default function Login(props) {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    // const [token, setToken] = useState("")
 
     const handleSubmit = (event) => {
-        let history = props.history
         event.preventDefault()
-        // console.log(event.target)
-        login({username, password, history})
+        login()
     }
 
     const handleCreateUser = (event) => {
         console.log(event.target)
     }
+    
+    const handleGuest = (event) => {
+        event.preventDefault()
+        setUsername("Guest")
+        setPassword("Guest")
+        login()
+    }
 
 
-
-    const login = ({username, password, history}) => {
+    const login = () => {
         let user = {username, password}
         fetch('http://localhost:4000/login', {
             method: "POST",
@@ -33,17 +36,18 @@ export default function Login(props) {
             body: JSON.stringify({user})
         })
         .then(response => response.json())
-        .then(jwt => {
-            localStorage.setItem('token', jwt.token)
-            // setToken(jwt.token)
-            history.push('/')
+        .then(response => {
+            const { payload, token } = response
+            localStorage.setItem('token', token)
+            // props.setSignedInUser(payload.username)
+            props.history.push('/')
         })
     }
 
     return (
-        <CardDeck className="login-card-container justify-content-sm-center row h-100 p-5">
-                <Card className=" mx-5 my-auto" >
-                <Card.Title className="text-center mt-2">Meditation App!</Card.Title>
+        <div className="login-card-container justify-content-sm-center row h-100 p-5">
+                <Card className=" mx-5 my-auto" style={{width: '200rem'}}>
+                <Card.Title text="primary" className="text-center mt-2">Ohm Logger</Card.Title>
                 <Card.Subtitle className="text-center">Please Log In</Card.Subtitle>
                     <Form className="login-form mx-4" onSubmit={handleSubmit}>
                         <Form.Group controlId="formBasicUsername">
@@ -55,11 +59,12 @@ export default function Login(props) {
                             <Form.Control type="password"  value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Input Password"/>
                             </Form.Group>
                             <Form.Row className="justify-content-sm-between mb-2">
-                                <Button variant="primary" type="submit">Login</Button>
+                                <Button variant="primary" as="input" type="submit" value="Login" />
+                                <Button variant="secondary" onClick={handleGuest}>Continue as Guest</Button>
                                 <Button onClick={handleCreateUser} variant="secondary"type="submit">Create Account</Button>
                             </Form.Row>
                     </Form>
                 </Card>
-        </CardDeck>
+        </div>
     )
 }

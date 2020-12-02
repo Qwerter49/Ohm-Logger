@@ -11,9 +11,9 @@ export default function MainPage(props) {
         <div className="mainPageContainer d-flex flex-row">
             <NavbarContainer {...props}/>
             <Switch>
-                <Route path="/meditate" render={(routeProps)=> <Meditate {...routeProps} />}/>
                 <Route path="/profile" render={(routeProps)=> <Profile {...routeProps} />}/>
                 <Route path="/calendar" render={(routeProps)=> <CalendarContainer {...routeProps} />}/>
+                <Route path="/" render={(routeProps)=> <Meditate  {...props} {...routeProps} />}/>
             </Switch>
         </div>
     )

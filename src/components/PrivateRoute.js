@@ -8,7 +8,7 @@ export default function PrivateRoute(props) {
             // Need to check this token with the backend and if its vaild render for that person
             ?  (
                 <>
-                    <MainPage {...routerProps}/>
+                    <MainPage signedInUser={props.signedInUser} {...routerProps}/>
                 </>
             )
             : <Redirect to="/login" />

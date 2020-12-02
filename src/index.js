@@ -8,6 +8,7 @@ import 'mdbreact/dist/css/mdb.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'react-big-calendar/lib/css/react-big-calendar.css'
+import 'react-big-calendar/lib/sass/variables.scss';
 
 ReactDOM.render(
   <React.StrictMode>
