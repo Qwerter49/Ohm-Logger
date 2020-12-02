@@ -3,7 +3,7 @@
  ## Description
  Ohm Logger is a web app designed to help users track their meditation sessions length and frequency. 
 
-Backend respository: ()
+Backend respository: (https://github.com/Qwerter49/Ohm-Logger-Backend)
 <br>[Demo Video]()
 
 ## How to Set Up
